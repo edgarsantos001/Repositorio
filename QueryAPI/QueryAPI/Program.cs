@@ -19,13 +19,12 @@ namespace QueryAPI
     {
         static void Main(string[] args)
         {
-            AtualizarEmpresa(); //25351273890201562
-            //ResultRequest<ContentMaterialDTO>("https://consultas.anvisa.gov.br/api/consulta/saude/25351273890201562"); //25351166385200298");
+         AtualizarEmpresa();
             
             Console.ReadLine();  
         }
 
-        public static T ResultRequest<T>(string url)
+        public static T ResultRequest<T>(string url) where T : new()
         {
             T obj;
             var request = WebRequest.CreateHttp(url); 
@@ -40,18 +39,14 @@ namespace QueryAPI
                     {
                         object objResponse = reader.ReadToEnd();
                         obj = JsonConvert.DeserializeObject<T>(objResponse.ToString());
-                        //var teste = principal; 
-                        //Console.WriteLine(post.content + " " + post.title + " " + post.body);
-                        //streamDados.Close();
                     }
                 }
             }
             catch (WebException wex)
             {
                 if (wex.Status == WebExceptionStatus.ProtocolError)
-                {
-
-                }
+                    return new T();
+                
 
                 Thread.Sleep(1000);
                 return ResultRequest<T>(url);
@@ -77,13 +72,16 @@ namespace QueryAPI
                 foreach (var mat in material.content)
                 {
                     ContentMaterialDTO content = ResultRequest<ContentMaterialDTO>(link + mat.processo);
-                    content.situacao = mat.situacao;
-                    content.idMaterial = idmaterial;
-                    int idContent = InsertMaterialContent(content);
 
-                    Fabricante(content.fabricantes, idContent);
-                    Apresentacao(content.apresentacoes, idContent);
-                    Console.WriteLine($"SUCESSO: /n {mat.processo}");
+                    if (content.processo != null)
+                    {
+                        content.situacao = mat.situacao;
+                        content.idMaterial = idmaterial;
+                        int idContent = InsertMaterialContent(content);
+                        Fabricante(content.fabricantes, idContent);
+                        Apresentacao(content.apresentacoes, idContent);
+                        Console.WriteLine($"SUCESSO: \n {mat.processo}");
+                    }
                 }
 
                 
@@ -300,11 +298,6 @@ namespace QueryAPI
 
     }
 }
-
-
-
-
-
 
 //TODO: Separar os itens por parametros 
 
