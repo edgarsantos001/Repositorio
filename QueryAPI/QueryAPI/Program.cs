@@ -20,8 +20,8 @@ namespace QueryAPI
     {
         static void Main(string[] args)
         {
-            // AtualizarEmpresa();
-            AtualizaMedicamento();
+             AtualizarEmpresa();
+            //AtualizaMedicamento();
             Console.ReadLine();  
         }
 
@@ -65,24 +65,33 @@ namespace QueryAPI
             int idmaterial = InsertMaterial(material) ;
             for (int i = 1; i < qtdPages; i++)
             {
-                if (material.content == null  )
-                    material = ResultRequest<MaterialDTO>(string.Format(link + "?count ={0}&filter%5BnumeroRegistro%5D=&page={1}", 10, i));
-                
-                //TODO:PASSAR MATERIAL AO INVES DO CONTENT.
-                foreach (var mat in material.content)
+                try
                 {
-                    ContentMaterialDTO content = ResultRequest<ContentMaterialDTO>(link + mat.processo);
-                    if (content.processo != null)
+                    if (material.content == null)
+                        material = ResultRequest<MaterialDTO>(string.Format(link + "?count ={0}&filter%5BnumeroRegistro%5D=&page={1}", 10, i));
+
+                    //TODO:PASSAR MATERIAL AO INVES DO CONTENT.
+                    foreach (var mat in material.content)
                     {
-                        content.situacao = mat.situacao;
-                        content.idMaterial = idmaterial;
-                        int idContent = InsertMaterialContent(content);
-                        Fabricante(content.fabricantes, idContent);
-                        Apresentacao(content.apresentacoes, idContent);
-                        Console.WriteLine($"SUCESSO: \n {mat.processo}");
+                        ContentMaterialDTO content = ResultRequest<ContentMaterialDTO>(link + mat.processo);
+                        if (content.processo != null)
+                        {
+                            content.situacao = mat.situacao;
+                            content.idMaterial = idmaterial;
+                            int idContent = InsertMaterialContent(content);
+                            Fabricante(content.fabricantes, idContent);
+                            Apresentacao(content.apresentacoes, idContent);
+                            Console.WriteLine($"SUCESSO: \n {mat.processo}");
+                        }
                     }
+                    material = new MaterialDTO();
                 }
-                material = new MaterialDTO();
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: \n {ex.Message} \n Page : {i}");
+                    material = new MaterialDTO();
+                }
+                
             }
         }
 

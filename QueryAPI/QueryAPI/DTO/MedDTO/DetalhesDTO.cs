@@ -6,12 +6,11 @@ namespace QueryAPI.DTO
 {
    public class DetalhesDTO
     {
-
         public int codigoProduto { get; set; }
         public int tipoProduto { get; set; }
         public string dataProduto { get; set; }
         public string nomeComercial { get; set; }
-        public List<string> classesTerapeuticas { get; set; }
+        public List<string> classesTerapeuticas { get; set; }//ID
         public string numeroRegistro { get; set; }
         public string dataVencimento { get; set; }
         public string mesAnoVencimento { get; set; }
