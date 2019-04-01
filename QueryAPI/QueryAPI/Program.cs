@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using QueryAPI.DTO.MatDTO;
 using Utils;
 using System.Threading;
+using QueryAPI.DTO.MedDTO;
 
 namespace QueryAPI
 {
@@ -19,8 +20,8 @@ namespace QueryAPI
     {
         static void Main(string[] args)
         {
-         AtualizarEmpresa();
-            
+            // AtualizarEmpresa();
+            AtualizaMedicamento();
             Console.ReadLine();  
         }
 
@@ -57,8 +58,7 @@ namespace QueryAPI
 
         public static void AtualizarEmpresa()
         {
-            string link = "https://consultas.anvisa.gov.br/api/consulta/saude/"; // _configuration.GetSection("LinkConsulta:Material").Value;
-            //string parameters =// _configuration.GetSection("Parameters:TotalPorPaginacao").Value;
+            string link = "https://consultas.anvisa.gov.br/api/consulta/saude/"; 
 
             MaterialDTO material = ResultRequest<MaterialDTO>(string.Format(link + "?count ={0}&filter%5BnumeroRegistro%5D=&page={1}", 10, 1));
             int qtdPages = material.totalPages;
@@ -72,7 +72,6 @@ namespace QueryAPI
                 foreach (var mat in material.content)
                 {
                     ContentMaterialDTO content = ResultRequest<ContentMaterialDTO>(link + mat.processo);
-
                     if (content.processo != null)
                     {
                         content.situacao = mat.situacao;
@@ -83,10 +82,39 @@ namespace QueryAPI
                         Console.WriteLine($"SUCESSO: \n {mat.processo}");
                     }
                 }
-
-                
                 material = new MaterialDTO();
             }
+        }
+
+        public static void AtualizaMedicamento()
+        {
+            //?count=10&filter%5Btarjas%5D=1,2,3,4&page=419
+            //https://consultas.anvisa.gov.br/api/consulta/medicamento/produtos/?count=10&filter%5BcategoriasRegulatorias%5D=1,2,3,4,5,6,7,8&page=1
+            string link = "https://consultas.anvisa.gov.br/api/consulta/medicamento/produtos/";
+            //"?count=10&filter%5Btarjas%5D=1,2,3,4&page={0}";
+            int pagesCount = 419;
+
+            for (int i = 1; i < pagesCount; i++)
+            {
+                MedicamentoDTO medicamento = ResultRequest<MedicamentoDTO>(string.Format(link + "?count=10&filter%5Btarjas%5D=1,2,3,4&page={0}", i));
+                foreach (ContentMedicamentoDTO med in medicamento.content)
+                {
+                    DetalhesDTO detalhes = ResultRequest<DetalhesDTO>(link + med.processo.numero);
+                }
+            }
+
+
+           
+           
+
+
+
+
+
+
+
+
+
         }
 
         private static void Apresentacao(List<ApresentacaoMaterial> apresentacoes, int idContent)

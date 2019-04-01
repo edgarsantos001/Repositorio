@@ -11,7 +11,7 @@ namespace QueryAPI.DTO
         public int tipoProduto { get; set; }
         public string dataProduto { get; set; }
         public string nomeComercial { get; set; }
-        public ClasseDTO classeTerapeuticas { get; set; }
+        public List<string> classesTerapeuticas { get; set; }
         public string numeroRegistro { get; set; }
         public string dataVencimento { get; set; }
         public string mesAnoVencimento { get; set; }
@@ -25,6 +25,8 @@ namespace QueryAPI.DTO
         public processoDTO processo { get; set; }
         public List<ApresentacaoDTO> apresentacoes { get; set; }
         public List<string> rotulos { get; set; }
+        public string codigoBulaPaciente { get; set; }
+        public string codigoBulaProfissional { get; set; }
 
     }
 }

@@ -14,7 +14,7 @@ namespace QueryAPI.DTO
         public string dataPublicacao { get; set; }
         public string validade { get; set; }
         public string tipoValidade { get; set; }
-        public string resgitro { get; set; }
+        public string registro { get; set; }
         public List<string> principiosAtivos { get; set; }
         public string complemento { get; set; }
         public EmbalagemPrimaria embalagemPrimaria { get; set; }
