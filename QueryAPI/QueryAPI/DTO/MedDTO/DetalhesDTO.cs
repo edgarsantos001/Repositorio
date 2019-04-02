@@ -10,7 +10,6 @@ namespace QueryAPI.DTO
         public int tipoProduto { get; set; }
         public string dataProduto { get; set; }
         public string nomeComercial { get; set; }
-        public List<string> classesTerapeuticas { get; set; }//ID
         public string numeroRegistro { get; set; }
         public string dataVencimento { get; set; }
         public string mesAnoVencimento { get; set; }
@@ -20,12 +19,19 @@ namespace QueryAPI.DTO
         public string medicamentoReferencia { get; set; }
         public string categoriaTerapeutica { get; set; }
         public string atc { get; set; }
-        public EmpresaDTO empresa { get; set; }
-        public processoDTO processo { get; set; }
-        public List<ApresentacaoDTO> apresentacoes { get; set; }
-        public List<string> rotulos { get; set; }
         public string codigoBulaPaciente { get; set; }
         public string codigoBulaProfissional { get; set; }
+        public EmpresaDTO empresa { get; set; }
+        public processoDTO processo { get; set; }
+
+        public List<string> rotulos { get; set; }
+
+        public List<string> classesTerapeuticas { get; set; }
+     
+        public List<ApresentacaoDTO> apresentacoes { get; set; }
+
+        //FK_ROTULO_MEDICAMENTO
+        //FK_CLASSE_MED
 
     }
 }
