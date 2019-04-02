@@ -19,35 +19,53 @@ namespace QueryAPI.Service
         
         public void AtualizarMaterial()
         {
-            string link = "https://consultas.anvisa.gov.br/api/consulta/saude/"; 
+            _logger.LogTrace("Obtém Link API Consulta!!"); 
+            string link = "https://consultas.anvisa.gov.br/api/consulta/saude/";
 
+            _logger.LogTrace("Obtém Dados Base Material!!!");
             MaterialDTO material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 50, 1));
-            int qtdPages = material.totalPages;
-            int idmaterial = _materialRepository.InsertMaterial(material) ;
 
+            int qtdPages = material.totalPages;
+            _logger.LogTrace($"Calculo de Quantidade de Paginas para consulta. \n Paginas : {qtdPages}");
+
+            _logger.LogTrace("Inserir os primeiros dados na tabela Material.");
+            int idmaterial = _materialRepository.InsertMaterial(material) ;
+            _logger.LogTrace("Retora Id Material para ser inserido nas Tabelas Filhas.");
+
+            _logger.LogTrace("Inicia o FOR com a quantidade de Paginas para carregar as tabelas.");
             for (int i = 1; i < qtdPages; i++)
             {
                 try
                 {
+                    _logger.LogTrace("Verifica se o Content Carregado no OBJ pelo Json está nulo.");
                     if (material.content == null)
                         material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 50, i));
                     int count = 1;
+                    _logger.LogTrace("o Content não estando nulo entra em um Forech para Inserção dos dados.");
                     foreach (var mat in material.content)
                     {
+                        _logger.LogTrace("Obtém os Detalhes do produto"); //Pelo numero do processo
                         ContentMaterialDTO content = Utils.ResultRequestJson<ContentMaterialDTO>(link + mat.processo);
                         if (content.processo != null)
                         {
                             content.situacao = mat.situacao;
                             content.idMaterial = idmaterial;
+                            _logger.LogTrace("Inseri os Detalhes Da Tabela Pai Retornando o ID");
                             int idContent = _materialRepository.InsertMaterialContent(content);
+                            _logger.LogTrace("Verifica se o Id não é 0.");
                             if (idContent != 0)
                             {
+                                _logger.LogTrace("Inseri Fabricantes ");
                                 InsertFactory(content.fabricantes, idContent);
+                                _logger.LogTrace("Inseri Apresentação do Produto.");
                                 InsertPresentetion(content.apresentacoes, idContent);
                                 Console.WriteLine($"SUCESSO: \n {mat.processo}");
                             }
                             else
                             {
+
+                                _logger.LogTrace("Quando o Id retorna 0 significa que o produto já existe na base de dados.");
+
                                 Console.WriteLine($"EXISTE: \n {mat.processo}");
                                 Console.WriteLine($"QTD: \n {count++}");   
                             }
@@ -57,6 +75,8 @@ namespace QueryAPI.Service
                 }
                 catch (Exception ex)
                 {
+                    _logger.LogTrace("Caso ocorra uma Exceção é apresentado uma mensagem de ERRO no Console mas o processo continua.");
+
                     Console.WriteLine($"Error: \n {ex.Message} \n Page : {i}");
                     material = new MaterialDTO();
                 }

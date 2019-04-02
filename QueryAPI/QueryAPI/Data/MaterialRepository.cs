@@ -39,9 +39,11 @@ namespace QueryAPI.Data
         public void InsertPresention(ApresentacaoMaterial presention, int idContent)
         {
             _logger.LogInformation("Insert Presention");
-            string connstr = _configuration.GetConnectionString("ConnectionString");
-                //"Data Source=.\\SQLEXPRESS;Initial Catalog=SUPORTE;Integrated Security=True;Connect Timeout=90;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-               using (SqlConnection conn = new SqlConnection(connstr))
+
+            _logger.LogInformation("Obtém String Connection.");
+            string connstr = _configuration.GetSection("Connection:ConnectionString").Value;
+
+            using (SqlConnection conn = new SqlConnection(connstr))
                {
                    try
                    {                   
