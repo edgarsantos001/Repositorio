@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QueryAPI.DTO
 {
-   public class DetalhesDTO
+    public class DetalhesDTO
     {
         public int codigoProduto { get; set; }
         public int tipoProduto { get; set; }
@@ -25,13 +25,7 @@ namespace QueryAPI.DTO
         public processoDTO processo { get; set; }
 
         public List<string> rotulos { get; set; }
-
         public List<string> classesTerapeuticas { get; set; }
-     
         public List<ApresentacaoDTO> apresentacoes { get; set; }
-
-        //FK_ROTULO_MEDICAMENTO
-        //FK_CLASSE_MED
-
     }
 }

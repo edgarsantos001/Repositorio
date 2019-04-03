@@ -20,8 +20,7 @@ namespace QueryAPI
         public void Run()
         {
             _logger.LogInformation("Ínicio Coleta Material."); 
-            _material.AtualizarMaterial();
-
+            _material.InsertMaterial();
 
             Console.ReadKey();
         }
