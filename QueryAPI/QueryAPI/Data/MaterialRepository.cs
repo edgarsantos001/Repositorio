@@ -3,15 +3,11 @@ using Microsoft.Extensions.Logging;
 using QueryAPI.DTO.MatDTO;
 using QueryAPI.Interface;
 using System;
-<<<<<<< HEAD
-using System.Data;
-using System.Data.SqlClient;
-=======
+
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
 using Utils;
 
 namespace QueryAPI.Data
@@ -29,7 +25,6 @@ namespace QueryAPI.Data
 
         public void InsertFactory(Fabricantes fabricantes, int idContent)
         {
-<<<<<<< HEAD
             _logger.LogInformation("Insert Fabricantes");
             string connstr = _configuration.GetSection("Connection:ConnectionString").Value;
             using (SqlConnection conn = new SqlConnection(connstr))
@@ -58,9 +53,7 @@ namespace QueryAPI.Data
                     _logger.LogError($"Insert Material{sqlex.Message}");
                 }
             }
-=======
-            throw new NotImplementedException();
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         }
 
         public int InsertMaterial(MaterialDTO materialDTO)
@@ -73,11 +66,7 @@ namespace QueryAPI.Data
                 try
                 {
                     conn.Open();
-<<<<<<< HEAD
                     SqlCommand cmd = new SqlCommand("carga.InsertMaterialJson", conn);
-=======
-                    SqlCommand cmd = new SqlCommand("dbo.InsertMaterialJson", conn);
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
                     //MATERIAL 
                     cmd.Parameters.Add(new SqlParameter("@mat_totaElements", materialDTO.totalElements));
                     cmd.Parameters.Add(new SqlParameter("@mat_totalpages", materialDTO.totalPages));
@@ -117,11 +106,7 @@ namespace QueryAPI.Data
             {
                 try
                 {
-<<<<<<< HEAD
                     SqlCommand cmd = new SqlCommand("carga.InsertMaterialContentJson", conn);
-=======
-                    SqlCommand cmd = new SqlCommand("dbo.InsertMaterialContentJson", conn);
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
 
                     //MATERIAL 
                     cmd.Parameters.Add(new SqlParameter("@material_id", contentMaterialDTO.idMaterial));
@@ -200,11 +185,7 @@ namespace QueryAPI.Data
             {
                 try
                 {
-<<<<<<< HEAD
                     SqlCommand cmd = new SqlCommand("carga.InsertApresentacaoJson", conn);
-=======
-                    SqlCommand cmd = new SqlCommand("dbo.InsertApresentacaoJson", conn);
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
                     //MATERIAL 
                     cmd.Parameters.Add(new SqlParameter("@cont_content_id", idContent));
                     cmd.Parameters.Add(new SqlParameter("@ap_modelo", presention.modelo ?? string.Empty));

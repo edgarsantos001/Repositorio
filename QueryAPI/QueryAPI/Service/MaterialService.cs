@@ -24,11 +24,9 @@ namespace QueryAPI.Service
             string link = "https://consultas.anvisa.gov.br/api/consulta/saude/";
 
             _logger.LogTrace("Obtém Dados Base Material!!!");
-<<<<<<< HEAD
+
             MaterialDTO material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 1000, 1));
-=======
-            MaterialDTO material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 100, 1));
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
 
             int qtdPages = material.totalPages;
             _logger.LogTrace($"Calculo de Quantidade de Paginas para consulta. \n Paginas : {qtdPages}");
@@ -44,11 +42,8 @@ namespace QueryAPI.Service
                 {
                     _logger.LogTrace("Verifica se o Content Carregado no OBJ pelo Json está nulo.");
                     if (material.content == null)
-<<<<<<< HEAD
-                        material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 1000, i));
-=======
-                        material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 100, i));
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+                       material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 1000, i));
+
                     int count = 1;
                     _logger.LogTrace("o Content não estando nulo entra em um Forech para Inserção dos dados.");
                     foreach (var mat in material.content)

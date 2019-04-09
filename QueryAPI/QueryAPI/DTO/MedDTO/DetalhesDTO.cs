@@ -17,11 +17,9 @@ namespace QueryAPI.DTO
         public string dataVencimentoRegistro { get; set; }
         public string principioAtivo { get; set; }
         public string medicamentoReferencia { get; set; }
-<<<<<<< HEAD
+
         public string categoriaRegulatoria { get; set; }
-=======
-        public string categoriaTerapeutica { get; set; }
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         public string atc { get; set; }
         public string codigoBulaPaciente { get; set; }
         public string codigoBulaProfissional { get; set; }
@@ -32,7 +30,6 @@ namespace QueryAPI.DTO
         public List<string> classesTerapeuticas { get; set; }
         public List<ApresentacaoDTO> apresentacoes { get; set; }
     }
-<<<<<<< HEAD
 
     public class Rotulo
     {
@@ -43,6 +40,5 @@ namespace QueryAPI.DTO
     {
         public string classeTerapeutica_desc { get; set; }
     }
-=======
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
 }

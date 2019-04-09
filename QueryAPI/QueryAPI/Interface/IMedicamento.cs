@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-﻿using QueryAPI.DTO;
+using QueryAPI.DTO;
 using QueryAPI.DTO.MatDTO;
 using System;
-=======
-﻿using System;
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,7 +9,6 @@ namespace QueryAPI.Interface
 {
     public interface IMedicamento
     {
-<<<<<<< HEAD
         void InsertMedicamento();
         void InsertPresentetion(List<ApresentacaoDTO> presentetions, int idContent);
         void InsertRotulo(List<string> rotulo, int idMedDet);
@@ -30,7 +26,5 @@ namespace QueryAPI.Interface
         void InsertFactoryInter(List<FabricantesInternacionais> fabricantes, int idContent);
         void InsertFactoryNac(List<FabricantesNacionais> fabricantes, int idContent);
         
-=======
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
     }
 }

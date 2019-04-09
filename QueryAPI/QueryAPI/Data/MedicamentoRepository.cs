@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using QueryAPI.DTO;
 using QueryAPI.DTO.MedDTO;
@@ -8,16 +7,11 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using Utils;
-=======
-﻿using QueryAPI.DTO;
-using QueryAPI.Interface;
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
 
 namespace QueryAPI.Data
 {
     public class MedicamentoRepository : IMedicamentoRepository
     {
-<<<<<<< HEAD
         private readonly ILogger<MedicamentoRepository> _logger;
         private readonly IConfiguration _configuration; 
 
@@ -160,23 +154,19 @@ namespace QueryAPI.Data
         }
 
         public int InsertMedicamento(DetalhesDTO detalheMedicamentoDTO)
-=======
-        public void InsertFactory(ApresentacaoDTO apresentacao, int idMedicamento)
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         {
             throw new System.NotImplementedException();
         }
 
-<<<<<<< HEAD
+
         public int InsertMedicamentoContent(ContentMedicamentoDTO contentMaterialDTO)
-=======
-        public int InsertMaterial(DetalhesDTO detalheMedicamentoDTO)
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         {
             throw new System.NotImplementedException();
         }
 
-<<<<<<< HEAD
+
         public int InsertApresentacao(ApresentacaoDTO dto, int idMedDet)
         {
             _logger.LogInformation("Insert Apresentacao Medicamento.");
@@ -578,11 +568,7 @@ namespace QueryAPI.Data
                     _logger.LogError($"Insert ERRO Detalhe Medicamento: \n {sqlex.Message}");
                 }
             }
-=======
-        public int InsertMaterialContent(ContentMedicamentoDTO contentMaterialDTO)
-        {
-            throw new System.NotImplementedException();
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         }
     }
 }

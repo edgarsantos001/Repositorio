@@ -26,22 +26,17 @@ namespace QueryAPI.DTO
         public bool emAnalise { get; set; }
         public bool ifaUnico { get; set; }
         public EmbalagemPrimaria embalagemPrimaria { get; set; }
-<<<<<<< HEAD
+
         public EmbalagemSecundario embalagemSecundaria { get; set; }
-=======
-        public EmbalagemSecundario embalagemSecundario { get; set; }
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
 
 
         public List<FabricantesNacionais> fabricantesNacionais { get; set; }
         public List<FabricantesInternacionais> fabricantesInternacionais { get; set; }
-<<<<<<< HEAD
+
         public List<Acessorio> acessorios { get; set; }
         public List<string> envoltorios { get; set; }
-=======
-        public List<string> envoltorios { get; set; }
-        public List<string> acessorios { get; set; }
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
         public List<string> marcas { get; set; }
         public List<string> viasAdministracao { get; set; }
         public List<string> principiosAtivos { get; set; }
@@ -53,14 +48,13 @@ namespace QueryAPI.DTO
         public List<string> formasFarmaceuticas { get; set; }
     }
 
-<<<<<<< HEAD
+
     public class Acessorio
     {
         public string descricao { get; set; }
         public int quantidade { get; set; }
     }
-=======
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
+
     public class EmbalagemPrimaria
     {
         public string tipo { get; set; }
@@ -80,14 +74,11 @@ namespace QueryAPI.DTO
         public string pais { get; set; }
         public string uf { get; set; }
         public string cidade { get; set; }
-<<<<<<< HEAD
+
         public string endereco { get; set; }
     }
 
-=======
 
-    }
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
     public class FabricantesInternacionais
     {
         public string fabricante { get; set; }
