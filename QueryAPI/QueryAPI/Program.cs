@@ -60,9 +60,12 @@ namespace QueryAPI
             serviceCollection.AddTransient<IMaterial, MaterialService>();
             serviceCollection.AddTransient<IMaterialRepository, MaterialRepository>();
 
+<<<<<<< HEAD
             serviceCollection.AddTransient<IMedicamento, MedicamentoService>();
             serviceCollection.AddTransient<IMedicamentoRepository, MedicamentoRepository>();
 
+=======
+>>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
             serviceCollection.AddTransient<App>();
         }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Microsoft.Extensions.Logging;
 using QueryAPI.DTO;
 using QueryAPI.DTO.MatDTO;
@@ -6,11 +7,18 @@ using QueryAPI.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+=======
+﻿using QueryAPI.Interface;
+using System;
+using System.Collections.Generic;
+using System.Text;
+>>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
 
 namespace QueryAPI.Service
 {
     public class MedicamentoService : IMedicamento
     {
+<<<<<<< HEAD
         private readonly IMedicamentoRepository _medicamentoRepository;
         private readonly ILogger<MedicamentoService> _logger;
         public MedicamentoService(ILogger<MedicamentoService> logger, IMedicamentoRepository medicamentoRepository)
@@ -265,5 +273,7 @@ namespace QueryAPI.Service
                 _medicamentoRepository.InsertFactory(fab, idContent, 'I');
             }
         }
+=======
+>>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
     }
 }
