@@ -112,7 +112,7 @@ namespace QueryAPI.Data
 
                     cmd.Parameters.Add(new SqlParameter("@med_nome_comercial", detalheDTO.nomeComercial));
                     cmd.Parameters.Add(new SqlParameter("@med_cod_anvisa_med", ConvertTypes.ConvertStringToLong(detalheDTO.numeroRegistro)));
-                    cmd.Parameters.Add(new SqlParameter("@med_data_vencimento", detalheDTO.dataVencimento));
+                    cmd.Parameters.Add(new SqlParameter("@med_data_vencimento", ConvertTypes.ConvertStringToDate(detalheDTO.dataVencimento )));
                     cmd.Parameters.Add(new SqlParameter("@med_mes_ano_vencimento", detalheDTO.mesAnoVencimento));
                     cmd.Parameters.Add(new SqlParameter("@med_cod_parecer_publico", detalheDTO.codigoParecerPublico));
                     cmd.Parameters.Add(new SqlParameter("@med_cod_bula_pacientes", detalheDTO.codigoBulaPaciente));
@@ -219,11 +219,8 @@ namespace QueryAPI.Data
                         cmd.Parameters.Add(new SqlParameter("@apres_dataPublicacao", dateTime));
                     else
                         cmd.Parameters.Add(new SqlParameter("@apres_dataPublicacao", DateTime.Now));
-
-
-
+                                       
                     cmd.Parameters.Add(new SqlParameter("@apres_validade", dto.validade));
-
                     cmd.Parameters.Add(new SqlParameter("@apres_tipoValidade", dto.tipoValidade));
                     cmd.Parameters.Add(new SqlParameter("@apres_registro", ConvertTypes.ConvertStringToLong(dto.registro)));
                     cmd.Parameters.Add(new SqlParameter("@apres_acondicionamento", dto.acondicionamento ?? string.Empty));
@@ -323,7 +320,6 @@ namespace QueryAPI.Data
                     _logger.LogError($"Insert ERRO Detalhe Medicamento: \n {sqlex.Message}");
                 }
             }
-
         }
 
         public void InsertDestinacao(string destinacao, int idMedDet)

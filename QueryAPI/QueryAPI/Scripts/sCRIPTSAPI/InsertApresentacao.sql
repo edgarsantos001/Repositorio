@@ -5,11 +5,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-<<<<<<< HEAD
-ALTER PROCEDURE [carga].[InsertApresentacaoMedicamentoJson](
-=======
 CREATE PROCEDURE [carga].[InsertApresentacaoMedicamentoJson](
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
  @med_id int 
 --EMBALAGEM
  ,@embp_tipo varchar(20) NULL
@@ -61,19 +57,15 @@ DECLARE @embs_id AS int
 	SET @embs_id = SCOPE_IDENTITY()
 	END
 
-<<<<<<< HEAD
+
 IF NOT EXISTS (SELECT * FROM carga.APRESENTACAO WHERE COD_ANV_APRESENTACAO = @apres_registro)
 BEGIN 
-=======
---MEDICAMENTO
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
 INSERT INTO [carga].[APRESENTACAO]
            ([MEDICAMENTO_ID],[EMBALAGEM_PRIMARIA_ID],[EMBALAGEM_SECUNDARIA_ID]
            ,[COD_APRESENTACAO],[APRESENTACAO],[NUMERO_APRESENTACAO],[TOTALIDADE_APRESENTACAO]
            ,[DATA_PUBLICACAO],[VALIDADE_PROD_MESES],[TIPO_VALIDADE],[COD_ANV_APRESENTACAO]
            ,[COMPLEMENTO_APRESENTACAO],[ACONDICIONADO],[IF_UNICO],[RESTRICAO_HOSPITAIS],[MEDICAMENTO_REFERENCIA]
            ,[APRESENTACAO_FRACIONADA],[DATA_VENCIMENTO_REGISTRO],[ATIVO],[INATIVO],[EM_ANALISE],[TARJA])
-<<<<<<< HEAD
      VALUES (@med_id ,@embp_id,@embs_id  ,@apres_codigo,@apres_apresentacao,@apres_numero,@apres_totalidade,@apres_dataPublicacao,@apres_validade,@apres_tipoValidade,
 	         @apres_registro,@apres_complemento,@apres_acondicionamento,@apres_ifaUnico,@apres_restricaoHospitais,@apres_medicamentoReferencia,
 			 @apres_apresentacaoFracionada,@apres_dataVencimentoRegistro,@apres_ativa,@apres_inativa,@apres_emAnalise,@apres_tarja)
@@ -88,36 +80,3 @@ SELECT 0 AS APRESENTACAO_ID
 RETURN;	
 END
 END
-=======
-     VALUES
-           (
-   @med_id
-  ,@embp_id
-  ,@embs_id		    
-  ,@apres_codigo
-  ,@apres_apresentacao
-  ,@apres_numero
-  ,@apres_totalidade
-  ,@apres_dataPublicacao
-  ,@apres_validade
-  ,@apres_tipoValidade
-  ,@apres_registro
-  ,@apres_complemento
-  ,@apres_acondicionamento
-  ,@apres_ifaUnico
-  ,@apres_restricaoHospitais
-  ,@apres_medicamentoReferencia
-  ,@apres_apresentacaoFracionada
-  ,@apres_dataVencimentoRegistro
-  ,@apres_ativa
-  ,@apres_inativa
-  ,@apres_emAnalise
-  ,@apres_tarja)
-
-SET @apresentacao_id = SCOPE_IDENTITY()
-
-SELECT @apresentacao_id AS MEDICAMENTO_ID
-
-RETURN;	
-END
->>>>>>> 250e1124aac982d430b4c96b5f40c1413fb05cc0
