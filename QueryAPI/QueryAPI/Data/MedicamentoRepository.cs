@@ -159,13 +159,11 @@ namespace QueryAPI.Data
             throw new System.NotImplementedException();
         }
 
-
         public int InsertMedicamentoContent(ContentMedicamentoDTO contentMaterialDTO)
 
         {
             throw new System.NotImplementedException();
         }
-
 
         public int InsertApresentacao(ApresentacaoDTO dto, int idMedDet)
         {

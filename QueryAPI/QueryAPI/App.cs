@@ -25,9 +25,8 @@ namespace QueryAPI
         public void Run()
         {
             _logger.LogInformation("Ínicio Coletor.");
-
-            Thread threadMat = new Thread(new ThreadStart(InsertMat));
-            Thread threadMed = new Thread(new ThreadStart(InsertMed));
+             Thread threadMat = new Thread(new ThreadStart(InsertMat));
+             Thread threadMed = new Thread(new ThreadStart(InsertMed));
 
             try
             {

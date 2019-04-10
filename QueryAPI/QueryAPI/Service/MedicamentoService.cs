@@ -23,22 +23,7 @@ namespace QueryAPI.Service
 
         public void InsertMedicamento()
         {
-            //https://consultas.anvisa.gov.br/api/consulta/medicamento/produtos/?count=10&filter%5BcategoriasRegulatorias%5D=1,2,3,4,5,6,7,8&page=1
             string link = "https://consultas.anvisa.gov.br/api/consulta/medicamento/produtos/";
-            //"?count=10&filter%5Btarjas%5D=1,2,3,4&page={0}";
-            //  int pagesCount = 419;
-
-            //for (int i = 1; i < pagesCount; i++)
-            //{
-            //    MedicamentoDTO medicamento = Utils.ResultRequestJson<MedicamentoDTO>(string.Format(link + "?count=100&filter%5Btarjas%5D=1,2,3,4,5,6,7,8&page={0}", i));
-
-            //    foreach (ContentMedicamentoDTO med in medicamento.content)
-            //    {
-            //        DetalhesDTO detalhe = Utils.ResultRequestJson<DetalhesDTO>(link + med.processo.numero);
-            //        detalhe.processo = med.processo;
-            //    }
-            //}
-
             int pagesCount = 1;
             bool existData = true;
             while (existData)
@@ -57,16 +42,11 @@ namespace QueryAPI.Service
                         {
                             InsertRotulo(detalhe.rotulos, idMedDet);
                             InsertClasseTerapeutica(detalhe.classesTerapeuticas, idMedDet);
-
                             InsertPresentetion(detalhe.apresentacoes, idMedDet);
-
-
                         }
-
                         Console.WriteLine($"Produto: {med.produto.nome} \n Registro: {med.produto.numeroRegistro}..");
                     }
                 }
-
                 if (medicamento.last && medicamento.numberOfElements == 0)
                     existData = false;
             }
@@ -103,138 +83,138 @@ namespace QueryAPI.Service
                   int apresentacao_id =  _medicamentoRepository.InsertApresentacao(apresentacao, idMedDet);
 
                     if (apresentacao.fabricantesInternacionais.Any())
-                       InsertFactoryInter(apresentacao.fabricantesInternacionais, idMedDet);
+                       InsertFactoryInter(apresentacao.fabricantesInternacionais, apresentacao_id);
 
                     if (apresentacao.fabricantesNacionais.Any())
-                        InsertFactoryNac(apresentacao.fabricantesNacionais, idMedDet);
+                        InsertFactoryNac(apresentacao.fabricantesNacionais, apresentacao_id);
 
                     if (apresentacao.envoltorios.Any())
-                        InsertEnvoltorio(apresentacao.envoltorios, idMedDet);
+                        InsertEnvoltorio(apresentacao.envoltorios, apresentacao_id);
 
                     if (apresentacao.acessorios.Any())
-                        InsertAcessorios(apresentacao.acessorios, idMedDet);
+                        InsertAcessorios(apresentacao.acessorios, apresentacao_id);
 
                     if (apresentacao.marcas.Any())
-                        InsertMarcas(apresentacao.marcas, idMedDet);
+                        InsertMarcas(apresentacao.marcas, apresentacao_id);
 
                     if (apresentacao.viasAdministracao.Any())
-                        InsertViasAdministracao(apresentacao.viasAdministracao, idMedDet);
+                        InsertViasAdministracao(apresentacao.viasAdministracao, apresentacao_id);
 
                     if (apresentacao.principiosAtivos.Any())
-                        InsertPrincipioAtivo(apresentacao.principiosAtivos, idMedDet);
+                        InsertPrincipioAtivo(apresentacao.principiosAtivos, apresentacao_id);
 
                     if (apresentacao.conservacao.Any())
-                        InsertConservacao(apresentacao.conservacao, idMedDet);
+                        InsertConservacao(apresentacao.conservacao, apresentacao_id);
 
                     if (apresentacao.restricaoPrescricao.Any())
-                        InsertRestricaoPrescricao(apresentacao.restricaoPrescricao, idMedDet);
+                        InsertRestricaoPrescricao(apresentacao.restricaoPrescricao, apresentacao_id);
 
                     if (apresentacao.restricaoUso.Any())
-                        InsertRestricaoUso(apresentacao.restricaoUso, idMedDet);
+                        InsertRestricaoUso(apresentacao.restricaoUso, apresentacao_id);
 
                     if (apresentacao.destinacao.Any())
-                        InsertDestinacao(apresentacao.destinacao, idMedDet);
+                        InsertDestinacao(apresentacao.destinacao, apresentacao_id);
 
                     if (apresentacao.formasFarmaceuticas.Any())
-                        InsertFormasFarmaceuticas(apresentacao.formasFarmaceuticas, idMedDet);
+                        InsertFormasFarmaceuticas(apresentacao.formasFarmaceuticas, apresentacao_id);
                 }
             }
         }
 
-        public void InsertFormasFarmaceuticas(List<string> formasFarmaceuticas, int idMedDet)
+        public void InsertFormasFarmaceuticas(List<string> formasFarmaceuticas, int apresentacao_id)
         {
             foreach (var forma in formasFarmaceuticas)
             {
                 if (!String.IsNullOrEmpty(forma))
-                _medicamentoRepository.InsertFormasFarmaceuticas(forma, idMedDet);
+                _medicamentoRepository.InsertFormasFarmaceuticas(forma, apresentacao_id);
 
             }
         }
 
-        public void InsertDestinacao(List<string> destinacoes, int idMedDet)
+        public void InsertDestinacao(List<string> destinacoes, int apresentacao_id)
         {
             foreach (var dest in destinacoes)
             {
                 if (!String.IsNullOrEmpty(dest))
-                    _medicamentoRepository.InsertDestinacao(dest, idMedDet);
+                    _medicamentoRepository.InsertDestinacao(dest, apresentacao_id);
             }
         }
 
-        public void InsertRestricaoUso(List<string> restricoesUso, int idMedDet)
+        public void InsertRestricaoUso(List<string> restricoesUso, int apresentacao_id)
         {
             foreach (var retuso in restricoesUso)
             {
                 if (!String.IsNullOrEmpty(retuso))
-                    _medicamentoRepository.InsertRestricaoUso(retuso, idMedDet);
+                    _medicamentoRepository.InsertRestricaoUso(retuso, apresentacao_id);
             }
         }
 
-        public void InsertRestricaoPrescricao(List<string> restricoesPrescricoes, int idMedDet)
+        public void InsertRestricaoPrescricao(List<string> restricoesPrescricoes, int apresentacao_id)
         {
             foreach (var restp in restricoesPrescricoes)
             {
                 if (!String.IsNullOrEmpty(restp))
-                    _medicamentoRepository.InsertRestricaoPrescricao(restp, idMedDet);
+                    _medicamentoRepository.InsertRestricaoPrescricao(restp, apresentacao_id);
             }
         }
 
-        public void InsertConservacao(List<string> conservacoes, int idMedDet)
+        public void InsertConservacao(List<string> conservacoes, int apresentacao_id)
         {
             foreach (var conser in conservacoes)
             {
                 if (!String.IsNullOrEmpty(conser))
-                    _medicamentoRepository.InsertConservacao(conser, idMedDet);
+                    _medicamentoRepository.InsertConservacao(conser, apresentacao_id);
             }
         }
 
-        public void InsertPrincipioAtivo(List<string> principiosAtivos, int idMedDet)
+        public void InsertPrincipioAtivo(List<string> principiosAtivos, int apresentacao_id)
         {
             foreach (var prinAt in principiosAtivos)
             {
                 if (!String.IsNullOrEmpty(prinAt))
-                    _medicamentoRepository.InsertPrincipioAtivo(prinAt, idMedDet);
+                    _medicamentoRepository.InsertPrincipioAtivo(prinAt, apresentacao_id);
 
             }
         }
 
-        public void InsertViasAdministracao(List<string> viasAdministracao, int idMedDet)
+        public void InsertViasAdministracao(List<string> viasAdministracao, int apresentacao_id)
         {
             foreach (var viaAdm in viasAdministracao)
             {
                 if (!String.IsNullOrEmpty(viaAdm))
-                    _medicamentoRepository.InsertViasAdministracao(viaAdm, idMedDet);
+                    _medicamentoRepository.InsertViasAdministracao(viaAdm, apresentacao_id);
             }
         }
 
-        public void InsertMarcas(List<string> marcas, int idMedDet)
+        public void InsertMarcas(List<string> marcas, int apresentacao_id)
         {
             foreach (var marca in marcas)
             {
                 if (!String.IsNullOrEmpty(marca))
-                    _medicamentoRepository.InsertMarcas(marca, idMedDet);
+                    _medicamentoRepository.InsertMarcas(marca, apresentacao_id);
             }
         }
 
-        public void InsertAcessorios(List<Acessorio> acessorios, int idMedDet)
+        public void InsertAcessorios(List<Acessorio> acessorios, int apresentacao_id)
         {
             foreach (var acessorio in acessorios)
             {
-                _medicamentoRepository.InsertAcessorios(acessorio, idMedDet);
+                _medicamentoRepository.InsertAcessorios(acessorio, apresentacao_id);
             }
         }
 
-        public void InsertEnvoltorio(List<string> envoltorios, int idMedDet)
+        public void InsertEnvoltorio(List<string> envoltorios, int apresentacao_id)
         {
             foreach (var env in envoltorios)
             {
                 if (!String.IsNullOrEmpty(env))
-                    _medicamentoRepository.InsertEnvoltorio(env, idMedDet);
+                    _medicamentoRepository.InsertEnvoltorio(env, apresentacao_id);
                 else
                     _logger.LogWarning($"ENVOLTORIOS: \n {envoltorios}");
             } 
         }
 
-        public void InsertFactoryNac(List<FabricantesNacionais> fabricantes, int idContent)
+        public void InsertFactoryNac(List<FabricantesNacionais> fabricantes, int apresentacao_id)
         {
             foreach (var itemFab in fabricantes)
             {
@@ -247,11 +227,11 @@ namespace QueryAPI.Service
                       RAZAO_SOCIAL = itemFab.fabricante,
                       UF = itemFab.uf
                 };
-                _medicamentoRepository.InsertFactory(fab, idContent, 'N');
+                _medicamentoRepository.InsertFactory(fab, apresentacao_id, 'N');
             } 
         }
 
-        public void InsertFactoryInter(List<FabricantesInternacionais> fabricantes, int idContent)
+        public void InsertFactoryInter(List<FabricantesInternacionais> fabricantes, int apresentacao_id)
         {
             foreach (var itemFab in fabricantes)
             {
@@ -264,7 +244,7 @@ namespace QueryAPI.Service
                     RAZAO_SOCIAL = itemFab.fabricante,
                     UF = string.Empty
                 };
-                _medicamentoRepository.InsertFactory(fab, idContent, 'I');
+                _medicamentoRepository.InsertFactory(fab, apresentacao_id, 'I');
             }
         }
 
