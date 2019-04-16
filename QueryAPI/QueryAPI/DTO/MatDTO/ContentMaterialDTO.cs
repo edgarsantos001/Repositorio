@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ClassesDTO;
+using System.Collections.Generic;
 
 namespace QueryAPI.DTO.MatDTO
 {

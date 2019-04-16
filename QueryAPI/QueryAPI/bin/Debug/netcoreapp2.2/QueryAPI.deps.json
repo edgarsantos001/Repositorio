@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "179c4c8239d4b394d9214a387805a73b1ca8ea0f"
+    "signature": "e1f7f324aed99edbe161a15ed299ad59f7be3250"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "QueryAPI/1.0.0": {
         "dependencies": {
+          "ClassesDTO": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.3",
           "Microsoft.EntityFrameworkCore.Relational": "2.2.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.3",
@@ -28,6 +29,7 @@
           "Serilog.Sinks.Console": "3.1.1",
           "Serilog.Sinks.RollingFile": "3.3.0",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "System.Data.SQLite": "1.0.110",
           "System.Data.SqlClient": "4.6.0",
           "Utils": "1.0.0.0"
         },
@@ -580,6 +582,41 @@
           }
         }
       },
+      "System.Data.SQLite/1.0.110": {
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.110"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.110": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.SQLite.dll": {
+            "assemblyVersion": "1.0.110.0",
+            "fileVersion": "1.0.110.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.110.0"
+          },
+          "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.110.0"
+          }
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -889,6 +926,11 @@
       "System.Threading.Timer/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.3.0"
+        }
+      },
+      "ClassesDTO/1.0.0": {
+        "runtime": {
+          "ClassesDTO.dll": {}
         }
       },
       "Utils/1.0.0.0": {
@@ -1250,6 +1292,20 @@
       "path": "system.data.sqlclient/4.6.0",
       "hashPath": "system.data.sqlclient.4.6.0.nupkg.sha512"
     },
+    "System.Data.SQLite/1.0.110": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YFUBQ4BzxzLhq/TOVg8wipF+YbpFHrfMx1dkhgpfTDsiLnpt/2oqRmI0ti48rNhNjR0ZPW5TLCdNA4zrHiNy0g==",
+      "path": "system.data.sqlite/1.0.110",
+      "hashPath": "system.data.sqlite.1.0.110.nupkg.sha512"
+    },
+    "System.Data.SQLite.Core/1.0.110": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x7xZ0oBWycJch9ShAFwTQRPJ2HEo5NmXyhx/LFJvSbCBQVXnHc9rIAeLo1VXzDFbfbtPl3HFpFhriEnUkS2L0Q==",
+      "path": "system.data.sqlite.core/1.0.110",
+      "hashPath": "system.data.sqlite.core.1.0.110.nupkg.sha512"
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1508,6 +1564,11 @@
       "sha512": "sha512-saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
       "path": "system.threading.timer/4.0.1",
       "hashPath": "system.threading.timer.4.0.1.nupkg.sha512"
+    },
+    "ClassesDTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Utils/1.0.0.0": {
       "type": "reference",

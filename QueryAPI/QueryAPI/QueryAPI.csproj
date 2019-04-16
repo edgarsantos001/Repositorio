@@ -27,6 +27,7 @@
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.110" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +44,10 @@
 
   <ItemGroup>
     <Folder Include="References\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassesDTO\ClassesDTO.csproj" />
   </ItemGroup>
 
 </Project>
