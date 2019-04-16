@@ -23,7 +23,6 @@ namespace QueryAPI
             Console.ReadLine();
         }
 
-
         private static void ConfigureServices(IServiceCollection serviceCollection, string[] args)
         {
             string EnvName = "Production";
@@ -62,8 +61,7 @@ namespace QueryAPI
 
             serviceCollection.AddTransient<IMedicamento, MedicamentoService>();
             serviceCollection.AddTransient<IMedicamentoRepository, MedicamentoRepository>();
-        }
-        
+        }   
     }
 }
 

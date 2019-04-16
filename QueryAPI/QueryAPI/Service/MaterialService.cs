@@ -25,8 +25,7 @@ namespace QueryAPI.Service
 
             _logger.LogTrace("Obtém Dados Base Material!!!");
 
-            MaterialDTO material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 1000, 1));
-
+            MaterialDTO material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 2000, 1));
 
             int qtdPages = material.totalPages;
             _logger.LogTrace($"Calculo de Quantidade de Paginas para consulta. \n Paginas : {qtdPages}");
@@ -36,15 +35,20 @@ namespace QueryAPI.Service
             _logger.LogTrace("Retora Id Material para ser inserido nas Tabelas Filhas.");
 
             _logger.LogTrace("Inicia o FOR com a quantidade de Paginas para carregar as tabelas.");
-            for (int i = 1; i < qtdPages; i++)
+            int count = 1;
+            for (int i = 62; i < qtdPages; i++)
             {
                 try
                 {
                     _logger.LogTrace("Verifica se o Content Carregado no OBJ pelo Json está nulo.");
                     if (material.content == null)
-                       material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 1000, i));
+                    {
+                        _logger.LogTrace($"Otendo Itens para Inclusão: \n Paginas Restantes {qtdPages - i}");
+                        material = Utils.ResultRequestJson<MaterialDTO>(string.Format(link + "?count={0}&filter%5BnumeroRegistro%5D=&page={1}", 2000, i));
+                        Console.Beep();
+                    }
 
-                    int count = 1;
+
                     _logger.LogTrace("o Content não estando nulo entra em um Forech para Inserção dos dados.");
                     foreach (var mat in material.content)
                     {
@@ -79,7 +83,7 @@ namespace QueryAPI.Service
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogTrace("Caso ocorra uma Exceção é apresentado uma mensagem de ERRO no Console mas o processo continua.");
+                    _logger.LogError("Caso ocorra uma Exceção é apresentado uma mensagem de ERRO no Console mas o processo continua.");
                     Console.WriteLine($"Error: \n {ex.Message} \n Page : {i}");
                     material = new MaterialDTO();
                 }

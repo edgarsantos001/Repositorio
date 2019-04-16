@@ -12,3 +12,4 @@ C:\POCS\QueryAPI\QueryAPI\obj\Debug\netcoreapp2.2\win-x64\QueryAPI.AssemblyInfo.
 C:\POCS\QueryAPI\QueryAPI\obj\Debug\netcoreapp2.2\win-x64\QueryAPI.csproj.CopyComplete
 C:\POCS\QueryAPI\QueryAPI\obj\Debug\netcoreapp2.2\win-x64\QueryAPI.dll
 C:\POCS\QueryAPI\QueryAPI\obj\Debug\netcoreapp2.2\win-x64\QueryAPI.pdb
+C:\POCS\QueryAPI\QueryAPI\obj\Debug\netcoreapp2.2\win-x64\QueryAPI.csprojAssemblyReference.cache
