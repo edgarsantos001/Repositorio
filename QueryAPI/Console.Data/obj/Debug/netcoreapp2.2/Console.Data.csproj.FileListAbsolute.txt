@@ -1,0 +1,3 @@
+C:\POCS\QueryAPI\Console.Data\obj\Debug\netcoreapp2.2\Console.Data.csproj.CoreCompileInputs.cache
+C:\POCS\QueryAPI\Console.Data\obj\Debug\netcoreapp2.2\Console.Data.AssemblyInfoInputs.cache
+C:\POCS\QueryAPI\Console.Data\obj\Debug\netcoreapp2.2\Console.Data.AssemblyInfo.cs

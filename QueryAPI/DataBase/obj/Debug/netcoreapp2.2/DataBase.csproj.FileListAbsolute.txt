@@ -1,0 +1,14 @@
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\DataBase.deps.json
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\DataBase.runtimeconfig.json
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\DataBase.runtimeconfig.dev.json
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\DataBase.dll
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\DataBase.pdb
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\ClassesDTO.dll
+C:\POCS\QueryAPI\DataBase\bin\Debug\netcoreapp2.2\ClassesDTO.pdb
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.csprojAssemblyReference.cache
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.csproj.CoreCompileInputs.cache
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.AssemblyInfoInputs.cache
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.AssemblyInfo.cs
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.csproj.CopyComplete
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.dll
+C:\POCS\QueryAPI\DataBase\obj\Debug\netcoreapp2.2\DataBase.pdb
