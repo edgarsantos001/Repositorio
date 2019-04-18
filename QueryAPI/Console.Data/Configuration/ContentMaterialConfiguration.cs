@@ -50,16 +50,13 @@ namespace ConData.Configuration
                 .HasColumnType("int")
                 .HasDefaultValue(0);
 
-            builder.HasMany(x => x.apresentacoes)
-                   .WithOne(x => x.content)
-                   .HasForeignKey(x => x.contentid);
+            //builder.HasMany(x => x.apresentacoes)
+            //       .WithOne(x => x.content)
+            //       .HasForeignKey(x => x.contentid);
 
-            builder.HasOne(d => d.vencimento)
-                   .WithOne(c => c.content)
-                   .HasForeignKey<Vencimento>(cd => cd.contentid);
-
-
-
+            //builder.HasOne(d => d.vencimento)
+            //       .WithOne(c => c.content)
+            //       .HasForeignKey<Vencimento>(cd => cd.contentid);
 
         }
     }

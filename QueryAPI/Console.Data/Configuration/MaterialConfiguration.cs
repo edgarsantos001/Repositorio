@@ -47,9 +47,9 @@ namespace ConData.Configuration
                 .HasDefaultValue(0);
 
 
-            builder.HasMany<ContentMaterial>(x => x.content)
-                .WithOne(s => s.material)
-                .HasForeignKey(s => s.materialId);
+            //builder.HasMany<ContentMaterial>(x => x.content)
+            //    .WithOne(s => s.material)
+            //    .HasForeignKey(s => s.materialId);
         }
     }
 }

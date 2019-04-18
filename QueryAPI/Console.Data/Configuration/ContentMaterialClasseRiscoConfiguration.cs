@@ -12,9 +12,9 @@ namespace ConData.Configuration
 
             builder.HasKey(cc => new { cc.contentId, cc.classeRiscoId});
 
-            builder.HasOne(cc => cc.Content)
-                   .WithMany(c => c.MaterialClasseRisco)
-                   .HasForeignKey(cc => cc.contentId);
+            //builder.HasOne(cc => cc.Content)
+            //       .WithMany(c => c.MaterialClasseRisco)
+            //       .HasForeignKey(cc => cc.contentId);
 
             builder.HasOne(cf => cf.ClasseRisco)
                    .WithMany(c => c.MaterialClasseRisco)
