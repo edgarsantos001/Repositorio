@@ -5,13 +5,12 @@ using System.Text;
 
 namespace ClassesDTO.DTO
 {
-    public class EmpresaDTO
+    public class Empresa
     {
-        public EmpresaDTO()
+        public Empresa()
         {
-            content = new List<ContentMaterialDTO>();
+            content = new List<ContentMaterial>();
         }
-
 
         public int empresaId { get; set; }
         public string cnpj { get; set; }
@@ -20,7 +19,7 @@ namespace ClassesDTO.DTO
         public string cnpjFormatado { get; set; }
         public string autorizacao { get; set; }
 
-        public virtual List<ContentMaterialDTO> content { get; set; }
+        public virtual List<ContentMaterial> content { get; set; }
 
     }
 }

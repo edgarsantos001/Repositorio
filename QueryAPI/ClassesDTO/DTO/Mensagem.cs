@@ -1,7 +1,7 @@
 ﻿namespace ClassesDTO
 
 {
-    public class MensagemDTO
+    public class Mensagem
     {
         public string situacao { get; set; }
         public string resolucao { get; set; }

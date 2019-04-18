@@ -23,8 +23,8 @@ namespace ClassesDTO.DTO
         public string atc { get; set; }
         public string codigoBulaPaciente { get; set; }
         public string codigoBulaProfissional { get; set; }
-        public EmpresaDTO empresa { get; set; }
-        public processoDTO processo { get; set; }
+        public Empresa empresa { get; set; }
+        public Processo processo { get; set; }
 
         public List<string> rotulos { get; set; }
         public List<string> classesTerapeuticas { get; set; }

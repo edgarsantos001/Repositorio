@@ -1,5 +1,7 @@
-﻿using ClassesDTO.DTO.MatDTO;
+﻿using ClassesDTO.DTO;
+using ClassesDTO.DTO.MatDTO;
 using ConData.Configuration;
+using MatDTO.ClassesDTO.DTO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -28,13 +30,27 @@ namespace ConData.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ContentMaterialConfiguration());
+            modelBuilder.ApplyConfiguration(new ContentMaterialClasseRiscoConfiguration());
+            modelBuilder.ApplyConfiguration(new ContentMaterialFabricanteConfiguration());
+            modelBuilder.ApplyConfiguration(new EmpresaConfiguration());
             modelBuilder.ApplyConfiguration(new MaterialConfiguration());
-            modelBuilder.ApplyConfiguration(new ContentConfiguration());
-
-
+            modelBuilder.ApplyConfiguration(new VencimentoConfiguration());
+            modelBuilder.ApplyConfiguration(new ApresentacaoMaterialConfiguration());
+            modelBuilder.ApplyConfiguration(new ClasseRiscoConfiguration());
+            modelBuilder.ApplyConfiguration(new FabricanteConfiguration());
         }
-        public DbSet<MaterialDTO> Material { get; set; }
 
+        public DbSet<ApresentacaoMaterial> ApresentacaoMaterial { get; set; }
+        public DbSet<ClasseRisco> ClasseRisco { get; set; }
+        public DbSet<ContentClasseRisco> ContentClasseRisco { get; set; }
+        public DbSet<ContentMaterial> ContentMaterial { get; set; }
+        public DbSet<ContentMaterialFabricante> ContentMaterialFabricante { get; set; }
+        public DbSet<Fabricante> Fabricante { get; set; }
+        public DbSet<Material> Material { get; set; }
+       //public DbSet<Produto> Produto { get; set; }
+        public DbSet<Vencimento> Vencimento { get; set; }
+        
     }
 
 }

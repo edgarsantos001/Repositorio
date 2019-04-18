@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ClassesDTO.DTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ClassesDTO.DTO
+namespace MatDTO.ClassesDTO.DTO
 {
-    public class produtoDTO
+    public class Produto
     {
         public int codigo { get; set; }
         public string nome { get; set; }
         public long numeroRegistro { get; set; }
-        public tipoDTO tipo { get; set; }
+        public Tipo tipo { get; set; }
         public string categoria { get; set; }
         public string situacaoRotulo { get; set; }
         public string dataVencimento { get; set; }

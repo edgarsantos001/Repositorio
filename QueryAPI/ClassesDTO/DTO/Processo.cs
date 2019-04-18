@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassesDTO.DTO
 {
-   public class processoDTO
+   public class Processo
     {
         public string numero { get; set; }
 

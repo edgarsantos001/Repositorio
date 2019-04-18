@@ -6,11 +6,11 @@ using System.Text;
 
 namespace ClassesDTO.DTO.MatDTO
 {
-    public class MaterialDTO
+    public class Material
     {
-        public MaterialDTO()
+        public Material()
         {
-            content = new List<ContentMaterialDTO>(); 
+            content = new List<ContentMaterial>(); 
         }
 
         public int materialId { get; set; }
@@ -23,7 +23,7 @@ namespace ClassesDTO.DTO.MatDTO
         public int number { get; set; }
         public int size { get; set; }
 
-        public virtual List<ContentMaterialDTO> content { get; set; }
+        public virtual List<ContentMaterial> content { get; set; }
     }
 
 }

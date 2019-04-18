@@ -1,4 +1,4 @@
-﻿using ClassesDTO;
+﻿
 using System.Collections.Generic;
 
 namespace QueryAPI.DTO.MatDTO
@@ -19,7 +19,6 @@ namespace QueryAPI.DTO.MatDTO
         public List<Fabricantes> fabricantes { get; set; }
         public ClasseRisco risco { get; set; }
         public Vencimento vencimento { get; set; }
-        public MensagemDTO mensagem { get; set; }
         public EmpresaDTO empresa { get; set; }
     }
     public class ApresentacaoMaterial

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace ConData.Configuration
 {
-    public class EmpresaConfiguration : IEntityTypeConfiguration<EmpresaDTO>
+    public class EmpresaConfiguration : IEntityTypeConfiguration<Empresa>
     {
-        public void Configure(EntityTypeBuilder<EmpresaDTO> builder)
+        public void Configure(EntityTypeBuilder<Empresa> builder)
         {
             builder.ToTable("EMPRESA");
 
@@ -37,8 +37,6 @@ namespace ConData.Configuration
             builder.HasMany(c => c.content)
                    .WithOne(e => e.empresa)
                    .HasForeignKey(e => e.empresaId);
-
-
 
         }
     }

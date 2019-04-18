@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassesDTO.DTO
 {
-    public class tipoDTO
+    public class Tipo
     {
         public int codigo { get; set; }
         public string descricao { get; set; }

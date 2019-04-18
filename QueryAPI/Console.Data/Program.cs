@@ -15,30 +15,31 @@ namespace ConData
 
             using (var context = new QueryContext())
             {
-                List<ContentMaterialDTO> list = new List<ContentMaterialDTO>();
-                var material = new MaterialDTO() { totalPages = 1 };
+                List<ContentMaterial> list = new List<ContentMaterial>();
+                var material = new Material() { totalPages = 1 };
                 
-                material.content.Add(new ContentMaterialDTO { processo = "TESTE" });
-                material.content.Add(new ContentMaterialDTO { processo = "TESTE - 2" });
-                material.content.Add(new ContentMaterialDTO { processo = "TESTE - 3" });
+                //material.content.Add(new ContentMaterial { processo = "TESTE" });
+                //material.content.Add(new ContentMaterial { processo = "TESTE - 2" });
+                //material.content.Add(new ContentMaterial { processo = "TESTE - 3" });
 
-                context.Material.Add(material);
-                context.SaveChanges();
+                //context.Material.Add(material);
+                //context.SaveChanges();
 
-                foreach (var mat in context.Material.Local)
-                {
-                    Console.WriteLine($"Material: {mat.totalPages}");
+                //foreach (var mat in context.Material.Local)
+                //{
+                //    Console.WriteLine($"Material: {mat.totalPages}");
 
-                    foreach (var cont in material.content)
-                    {
-                        Console.WriteLine($"Content: {cont.processo}");
-                    }
-                }
+                //    foreach (var cont in material.content)
+                //    {
+                //        Console.WriteLine($"Content: {cont.processo}");
+                //    }
+                //}
 
                 Console.ReadLine();
 
             }
-
         }
+
+
     }
 }

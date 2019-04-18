@@ -8,9 +8,9 @@ using System.Text;
 
 namespace ConData.Configuration
 {
-    public class ContentConfiguration : IEntityTypeConfiguration<ContentMaterialDTO>
+    public class ContentMaterialConfiguration : IEntityTypeConfiguration<ContentMaterial>
     {
-        public void Configure(EntityTypeBuilder<ContentMaterialDTO> builder)
+        public void Configure(EntityTypeBuilder<ContentMaterial> builder)
         {
             builder.ToTable("MATERIAL_CONTENT");
             builder.HasKey(k => k.contentid);
@@ -54,14 +54,12 @@ namespace ConData.Configuration
                    .WithOne(x => x.content)
                    .HasForeignKey(x => x.contentid);
 
-            builder.HasMany(x => x.fabricantes)
-                   .WithOne(x => x.content)
-                   .HasForeignKey(x => x.contentid);
+            builder.HasOne(d => d.vencimento)
+                   .WithOne(c => c.content)
+                   .HasForeignKey<Vencimento>(cd => cd.contentid);
 
 
-            //builder.HasOne(c => c.empresa)
-            //       .WithOne(e => e.content)
-            //       .HasForeignKey<EmpresaDTO>(e => e.contentid);
+
 
         }
     }

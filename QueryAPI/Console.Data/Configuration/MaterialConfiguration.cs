@@ -7,9 +7,9 @@ using System.Text;
 
 namespace ConData.Configuration
 {
-    public class MaterialConfiguration : IEntityTypeConfiguration<MaterialDTO>
+    public class MaterialConfiguration : IEntityTypeConfiguration<Material>
     {
-        public void Configure(EntityTypeBuilder<MaterialDTO> builder)
+        public void Configure(EntityTypeBuilder<Material> builder)
         {
             builder.ToTable("MATERIAL");
 
@@ -47,7 +47,7 @@ namespace ConData.Configuration
                 .HasDefaultValue(0);
 
 
-            builder.HasMany<ContentMaterialDTO>(x => x.content)
+            builder.HasMany<ContentMaterial>(x => x.content)
                 .WithOne(s => s.material)
                 .HasForeignKey(s => s.materialId);
         }

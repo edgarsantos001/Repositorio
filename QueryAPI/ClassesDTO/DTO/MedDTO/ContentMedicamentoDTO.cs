@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatDTO.ClassesDTO.DTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,8 +8,8 @@ namespace ClassesDTO.DTO
     public class ContentMedicamentoDTO
     {
         public int orderm { get; set; }
-        public produtoDTO produto { get; set; }
-        public EmpresaDTO empresa { get; set; }
-        public processoDTO processo { get; set; }
+        public Produto produto { get; set; }
+        public Empresa empresa { get; set; }
+        public Processo processo { get; set; }
     }
 }

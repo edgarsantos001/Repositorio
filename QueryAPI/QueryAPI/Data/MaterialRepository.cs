@@ -129,13 +129,13 @@ namespace QueryAPI.Data
                     }
 
                     //MENSAGEM
-                    if (contentMaterialDTO.mensagem != null)
-                    {
-                        cmd.Parameters.Add(new SqlParameter("@msg_situacao", contentMaterialDTO.mensagem.situacao ?? string.Empty));
-                        cmd.Parameters.Add(new SqlParameter("@msg_resolucao", contentMaterialDTO.mensagem.resolucao ?? string.Empty));
-                        cmd.Parameters.Add(new SqlParameter("@msg_motivo", contentMaterialDTO.mensagem.motivo ?? string.Empty));
-                        cmd.Parameters.Add(new SqlParameter("@msg_negativo", contentMaterialDTO.mensagem.negativo));
-                    }
+                    //if (contentMaterialDTO.mensagem != null)
+                    //{
+                    //    cmd.Parameters.Add(new SqlParameter("@msg_situacao", contentMaterialDTO.mensagem.situacao ?? string.Empty));
+                    //    cmd.Parameters.Add(new SqlParameter("@msg_resolucao", contentMaterialDTO.mensagem.resolucao ?? string.Empty));
+                    //    cmd.Parameters.Add(new SqlParameter("@msg_motivo", contentMaterialDTO.mensagem.motivo ?? string.Empty));
+                    //    cmd.Parameters.Add(new SqlParameter("@msg_negativo", contentMaterialDTO.mensagem.negativo));
+                    //}
                     //CLASSE_RISCO
                     if (contentMaterialDTO.risco != null)
                     {
