@@ -1,9 +1,0 @@
-C:\POCS\QueryAPI\ClassesDTO\bin\Debug\netcoreapp2.2\ClassesDTO.deps.json
-C:\POCS\QueryAPI\ClassesDTO\bin\Debug\netcoreapp2.2\ClassesDTO.dll
-C:\POCS\QueryAPI\ClassesDTO\bin\Debug\netcoreapp2.2\ClassesDTO.pdb
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.csprojAssemblyReference.cache
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.csproj.CoreCompileInputs.cache
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.AssemblyInfoInputs.cache
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.AssemblyInfo.cs
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.dll
-C:\POCS\QueryAPI\ClassesDTO\obj\Debug\netcoreapp2.2\ClassesDTO.pdb

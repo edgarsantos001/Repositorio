@@ -21,11 +21,9 @@ namespace ConData
             {
                 //List<ContentMaterial> list = new List<ContentMaterial>();
                 //var material = new Material() { totalPages = 1 };
-                
                 //material.content.Add(new ContentMaterial { processo = "TESTE" });
                 //material.content.Add(new ContentMaterial { processo = "TESTE - 2" });
                 //material.content.Add(new ContentMaterial { processo = "TESTE - 3" });
-
                 //context.Material.Add(material);
                 //context.SaveChanges();
 

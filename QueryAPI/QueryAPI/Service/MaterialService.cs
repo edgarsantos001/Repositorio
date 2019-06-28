@@ -31,6 +31,7 @@ namespace QueryAPI.Service
             _logger.LogTrace($"Calculo de Quantidade de Paginas para consulta. \n Paginas : {qtdPages}");
 
             _logger.LogTrace("Inserir os primeiros dados na tabela Material.");
+
             int idmaterial = _materialRepository.InsertMaterial(material) ;
             _logger.LogTrace("Retora Id Material para ser inserido nas Tabelas Filhas.");
 
