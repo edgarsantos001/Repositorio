@@ -1,0 +1,11 @@
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\appsettings.json
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\RoboTinic.deps.json
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\RoboTinic.runtimeconfig.json
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\RoboTinic.runtimeconfig.dev.json
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\RoboTinic.dll
+C:\POCS\QueryAPI\RoboTinic\bin\Release\netcoreapp2.2\RoboTinic.pdb
+C:\POCS\QueryAPI\RoboTinic\obj\Release\netcoreapp2.2\RoboTinic.csproj.CoreCompileInputs.cache
+C:\POCS\QueryAPI\RoboTinic\obj\Release\netcoreapp2.2\RoboTinic.AssemblyInfoInputs.cache
+C:\POCS\QueryAPI\RoboTinic\obj\Release\netcoreapp2.2\RoboTinic.AssemblyInfo.cs
+C:\POCS\QueryAPI\RoboTinic\obj\Release\netcoreapp2.2\RoboTinic.dll
+C:\POCS\QueryAPI\RoboTinic\obj\Release\netcoreapp2.2\RoboTinic.pdb
